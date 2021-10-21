@@ -1,7 +1,7 @@
 public class IntroTaskQuadraticEquation {//решить квадратное уравнение
     public static void main(String[] args) {
-        int a = 4, b = -6, c = 3;
-        int d = b * b - 4 * a * c;
+        double a = 3, b = -8, c = 5;
+        double d = b * b - 4 * a * c;
         if (a == 0) {
             if (b == 0) {
                 if (c == 0)
@@ -10,18 +10,17 @@ public class IntroTaskQuadraticEquation {//решить квадратное у�
                     System.out.println("Решений нет");
             }
             else
-                System.out.println("Одно решение");
+                System.out.println(String.format("Одно решение: x = %.2f", -c/b));
         }
         else {
             if (d < 0)
                 System.out.println("Решений нет");
             else if (d == 0)
-                System.out.println("Одно решение");
+                System.out.println(String.format("Одно решение: x = %.2f", (-b/(2*a))));
             else if (d > 0) {
-//                int x1 = (-b - d * * 0.5) /(2 * a);
-                //              int x2 = (-b + d * * 0.5) /(2 * a);
-//            return f'два решения x1 = {min(x1,x2) :.2f}, x2 = {max(x1,x2) :.2f}'
-                System.out.println("Два решения");
+                double x1 = (-b - Math.sqrt(d)) / (2 * a);
+                double x2 = (-b + Math.sqrt(d)) / (2 * a);
+                System.out.println("Два решения: x1 = " + String.format("%.2f",Math.min(x1, x2)) + ", x2 = " + String.format("%.2f",Math.max(x1, x2)));
             }
         }
     }

@@ -5,7 +5,6 @@ import java.util.List;
 public class Algorithms {
     public static void main(String[] args){
         System.out.println(Arrays.toString(sieveOfEratosthenes(13)));
-        System.out.println(Arrays.toString(sieveOfEratosthenes2(13)));
         System.out.println(Arrays.toString(primes(13)));
         System.out.println(primeFactors(20));
         System.out.println("------------------------");
@@ -59,20 +58,6 @@ public class Algorithms {
     }
 
     private static boolean[] sieveOfEratosthenes(int n) {
-        boolean[] prime = new boolean[n + 1];
-        Arrays.fill(prime, true);
-        prime[0] = false;
-        prime[1] = false;
-        for (int i = 2; i <= n; i++) {
-            for (int j = 2; j <= Math.sqrt(i); j++) {
-                if (i % j == 0)
-                    prime[i] = false;
-            }
-        }
-        return prime;
-    }
-
-    private static boolean[] sieveOfEratosthenes2(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
         prime[0] = false;

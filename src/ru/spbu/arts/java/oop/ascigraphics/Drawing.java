@@ -1,23 +1,24 @@
 package ru.spbu.arts.java.oop.ascigraphics;
 
+import ru.spbu.arts.java.lambda.Printable;
 import java.util.Arrays;
 
-public class Drawing {
+public class Drawing implements Printable {
     public int x, y;
     public char symbol;
     public char[][] massive;
 
-    Drawing (int x, int y, char symbol) {
+    public Drawing(int x, int y, char symbol) {
         this.x = x;
         this.y = y;
         this.symbol = symbol;
-        char[][] m = new char[y][x];
-        this.massive = m;
+        this.massive = new char[y][x];
         for (char[] line : this.massive) {
             Arrays.fill(line, symbol);
         }
     }
 
+    @Override
     public void print() {
         String sep_line = "";
         for (char[] line : massive) {
